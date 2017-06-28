@@ -1,7 +1,7 @@
 package static_constructor_learn;
 import static java.lang.System.out;
 /**
- * 栈的实现，这里我的经验是栈中主要记录了当前节点的以前节点的信息，记住这个。
+ * 栈的实现，这里我的经验是栈中主要是赋值当前节点和它前驱节点的信息，记住这个。
  * @author Administrator
  *
  */
