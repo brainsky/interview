@@ -2,7 +2,28 @@ package static_constructor_learn;
 import static java.lang.System.out;
 /**
  * 栈的实现，这里我的经验是栈中主要是赋值当前节点和它前驱节点的信息，记住这个。
- * @author Administrator
+ * 你也可以记住这个，算法导论中的伪代码，非常简单，实现就自行发挥。
+ * STACK-EMPTY(S)//S为一个容器，书中为数组，且它有一个属性top。
+ *	if S.top == 0
+ *		return TRUE
+ *	else return FALSE
+ * 入栈,思想就2行，会非常惊讶吧
+ * PUSH(S, x)
+ *	S.top = S.top + 1
+ *	S[S.top] = x
+ * 出栈,只是弹出栈顶元素，所以return S[S.top],但是栈顶指针要指向栈顶下的一个元素，所以有S.top = S.top -1
+ * 
+ * POP(S)
+ *  	if STACK-EMPTY(S)
+ *		error "underflow"
+ *	else S.top = S.top -1
+ *		return S[S.top + 1]
+ * 其实我非常佩服《算法导论》这本书，也推荐读者去读一读，它的思想是非常非常简洁。我原来看到树就头疼，更不要说自己实现一颗树了，
+ * 但是这本书里的思想真的非常简单，像我这种基础不扎实的都能实现，何况你呢？而且算法是内功，其实当你用到框架处理各种事务后会发现
+ * 真正能提高自己的是算法，程序里不变的是这个，框架会变，语言会变。而且我预言有3-5年工作经验后，应该体验得更深，项目经验很有局限，
+ * 下个项目未必能用到，这就说明我们不能靠项目经验去创造。只能解决过去出现过的问题，而用算法是可以创造新的东西的，这是两者最大的区别。
+ * 最后，能创造才会无可限量，别人和你自己都无法估计你的未来，要不然，基本上20岁就干着60岁的工作。你会愿意吗？
+ * @author LKD
  *
  */
 public class StackImpl {
@@ -32,7 +53,7 @@ public class StackImpl {
 		return node;
 	}
 	public boolean isEmpty(){
-		return current == null;
+		return top == null;
 	}
 	class Node{
 		//记录数据
